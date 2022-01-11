@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Snatcher SegaCD";
+  src: local("Snatcher SegaCD"),
+    url(../../public/fonts/snatcher-sega-cd.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Compacta";
+  src: local("Compacta"),
+    url(../../public/fonts/CompactaStdItalic.otf) format("opentype");
+}
+
+$snatcherText: "Snatcher SegaCD";
+$snatcherTitle: "Compacta";
+
+// Colors
+$snatcherFont: #2ad0cd;
+
+h1 {
+  font-family: "Compacta";
+}
+
+p,
+button {
+  font-family: $snatcherText;
+  color: $snatcherFont;
+}

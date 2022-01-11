@@ -1,0 +1,47 @@
+.messageBox h1 {
+  color: #f7fbd8;
+  font-size: 100px;
+  text-align: center;
+}
+
+/* card box */
+.cardBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background: rgba(187, 205, 243, 0.44);
+  width: 200px;
+  border: 2px solid red;
+  border-radius: 25px 25px 25px 25px;
+  text-align: center;
+}
+
+.cardBox .boxCol1 {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.cardBox .boxCol2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.cardBox h1 {
+  width: 50%;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardBox img {
+  max-width: 100%;
+  border-top-right-radius: 23px;
+}
+
+/* ability box */
+.abilityBox {
+  grid-area: 2 / 1 / 3 / 3;
+  background: black;
+}

@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import MessageBox from "./components/MessageBox";
+import React, { useState, createContext, useContext } from "react";
+import { Context } from "./Store";
+import Card from './components/Card';
+import Intro from './components/scenes/IntroCutscene';
 
-function App() {
+function App(props) {
+  const [state, dispatch] = useContext(Context);
+
+  const changeGameStatus = (scene) => {
+    dispatch({type: scene.toString()});
+  }
+
+  const renderSwitch = (param) => {
+    console.log(param);
+    switch (param.gamestatus) {
+      case "startgame":
+        return (
+          <>
+            <MessageBox message="START GAME" />
+            <Card/>
+          </>
+        );
+      case "mainmenu":
+        return (
+          <>
+            <MessageBox message="SNATCHER CD" />
+          </>
+        );
+      case "scene1":
+        return (
+          <>
+            <Intro/>
+          </>
+        )
+      default:
+        return (
+          <>
+            <p>Game Over</p>
+          </>
+        );
+    }
+  };
+
+  // console.log("State is: " + gameState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="defaultBackground">
+      {renderSwitch(state)}
+      {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("SCENE_1")}>Start Game</button> : <></>}
     </div>
   );
 }
