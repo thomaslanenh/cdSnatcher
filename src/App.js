@@ -1,16 +1,13 @@
 import "./App.scss";
 import MessageBox from "./components/MessageBox";
 import React, { useState, createContext, useContext } from "react";
+import ReactAudioPlayer from 'react-audio-player';
 import { Context } from "./Store";
 import Card from './components/Card';
 import Intro from './components/scenes/IntroCutscene';
 
 function App(props) {
   const [state, dispatch] = useContext(Context);
-
-  const changeGameStatus = (scene) => {
-    dispatch({type: scene.toString()});
-  }
 
   const renderSwitch = (param) => {
     console.log(param);
@@ -25,7 +22,7 @@ function App(props) {
       case "mainmenu":
         return (
           <>
-            <MessageBox message="SNATCHER CD" />
+            <MessageBox message="CD SNATCHER" />
           </>
         );
       case "scene1":
@@ -47,7 +44,6 @@ function App(props) {
   return (
     <div className="defaultBackground">
       {renderSwitch(state)}
-      {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("SCENE_1")}>Start Game</button> : <></>}
     </div>
   );
 }

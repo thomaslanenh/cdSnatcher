@@ -1,3 +1,44 @@
 h1 {
-  color: purple;
+  padding-top: 15%;
+  animation-name: fadein;
+  opacity: 0;
+  animation-delay: 2000ms;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  color: #f7fbd8;
+  font-size: 250px;
+  text-align: center;
+}
+
+.audioPlayer {
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+
+button {
+  animation-name: fadein;
+  opacity: 0;
+  animation-delay: 2000ms;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+}
+
+.messageBox {
+  height: 100vh;
+  background-image: url("../../../public/backgroundneokobe.gif");
+  background-size: cover;
+  -webkit-animation: fadein 4s, MOVE-BG 5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 4s; /* Firefox < 16 */
+  -ms-animation: fadein 4s; /* Internet Explorer */
+  -o-animation: fadein 4s; /* Opera < 12.1 */
+  animation: fadein 4s, MOVE-BG 50s forwards;
+}
+
+@keyframes MOVE-BG {
+  0% {
+    background-position: top center;
+  }
+  100% {
+    background-position: center center;
+  }
 }

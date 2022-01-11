@@ -4,7 +4,9 @@ const initialState = {
   gamestatus: "mainmenu",
   cardsheld: ['gillian', 'metalgear'],
   showdialogue: false,
-  currentdialogue: 0,
+  currentdialogueindex: 0,
+  dialogue: "",
+  letterindex: 0,
 };
 
 const Reducer = (state, action) => {
@@ -24,9 +26,15 @@ const Reducer = (state, action) => {
         case "STOP_DIALOGUE":
             console.log("Dialogue Disabled");
             return {...state, showdialogue: false}
-        case "CHANGE_SCENE":
+        case "CHANGE_DIALOGUE_SCENE":
             console.log("Changed game scene");
             return {...state, currentdialogue: action.payload}
+        case "CHANGE_DIALOGUE":
+            console.log("Changed dialogue");
+            return {...state, dialogue: action.payload}
+        case "CHANGE_DIALOGUE_INDEX":
+            console.log("Changed dialogue index: " + action.payload);
+            return {...state, letterindex: action.payload}
         default:
             console.log("Game Over");
             throw new Error();

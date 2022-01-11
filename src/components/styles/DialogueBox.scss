@@ -2,12 +2,26 @@
   background: hsla(232, 100%, 7%, 0.78);
   border: 5px solid white;
   width: 55%;
-  padding: 25px;
+  padding: 0px 25px 0px 25px;
+  margin-top: 20%;
+  line-height: 2em;
+  height: 140px;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 .dialogueBox p {
   font-size: 20px;
   color: white;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
