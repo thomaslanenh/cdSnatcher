@@ -26,22 +26,23 @@ export default function MessageBox(props){
     const changeGameStatus = (scene) => {
 
         setFade(true);
-        var fadeAudio = setInterval(() => {
-            if (state.gamestatus==="mainmenu"){
-                if (mainMenuMusic.volume != 0){
-                    mainMenuMusic.volume -= 0.1;
+        const fadeAudio = setInterval(() => {
+            if (state.gamestatus === "mainmenu") {
+                if (mainMenuMusic.volume !== 0) {
+                    // mainMenuMusic.volume -= 0.1;
+                    mainMenuMusic.pause();
                 }
-                
-                if (mainMenuMusic.volume === 0.0){
+
+                if (mainMenuMusic.volume === 0.0) {
                     clearInterval(fadeAudio);
                 }
-            }
-            else{
+
+            } else {
                 mainMenuMusic.pause();
             }
-        }, 300)
-        
-        
+        }, 300);
+
+
         setTimeout(()=> dispatch({type: scene.toString()}), 3000);
  
       }
@@ -51,7 +52,6 @@ export default function MessageBox(props){
             <h1>{message}</h1>
             {state.gamestatus=== 'mainmenu'? <img className="audioPlayer" src="../volume.png" alt="Play Music" onClick={()=> playSong()}/> : null} <br/>
             {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("SCENE_1")}>Start Game</button> : <></>}
-
         </div>
     )
 }

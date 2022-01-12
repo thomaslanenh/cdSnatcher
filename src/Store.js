@@ -35,6 +35,9 @@ const Reducer = (state, action) => {
         case "CHANGE_DIALOGUE_INDEX":
             console.log("Changed dialogue index: " + action.payload);
             return {...state, letterindex: action.payload}
+        case "CHANGE_DIALOGUE_LINE":
+            console.log("Changed dialogue line");
+            return {...state, currentdialogueindex: action.payload};
         default:
             console.log("Game Over");
             throw new Error();
