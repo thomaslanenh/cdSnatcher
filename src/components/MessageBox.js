@@ -1,38 +1,55 @@
 import './styles/MessageBox.scss';
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {Context} from '../Store';
-import ReactAudioPlayer from 'react-audio-player';
 
-
+let mainMenuMusic = new Audio("/music/snatcher-sega-cd.mp3");
 
 export default function MessageBox(props){
 
-    let mainMenuMusic = new Audio("/music/snatcher-sega-cd.mp3");
-
     const [state, dispatch] = useContext(Context);
+    const [playing, setPlaying] = useState(false);
+    const [fade, setFade] = useState(false);
 
-      
     let message = props.message;
 
-    const changeGameStatus = (scene) => {
-        if (state.gamestatus==="mainmenu"){
-            if (mainMenuMusic.volume > 0){
-                mainMenuMusic.volume -= .5;
-            }else {
-                mainMenuMusic.pause();
-            }    
+    const playSong = () => {
+        if (playing === false){
+            mainMenuMusic.play();
         }
-        else{
+        else {
             mainMenuMusic.pause();
         }
+
+        setPlaying(!playing);
+    }
+
+    const changeGameStatus = (scene) => {
+
+        setFade(true);
+        var fadeAudio = setInterval(() => {
+            if (state.gamestatus==="mainmenu"){
+                if (mainMenuMusic.volume != 0){
+                    mainMenuMusic.volume -= 0.1;
+                }
+                
+                if (mainMenuMusic.volume === 0.0){
+                    clearInterval(fadeAudio);
+                }
+            }
+            else{
+                mainMenuMusic.pause();
+            }
+        }, 300)
         
-        dispatch({type: scene.toString()});
+        
+        setTimeout(()=> dispatch({type: scene.toString()}), 3000);
+ 
       }
 
     return(
-        <div className="messageBox">
+        <div className={fade ? 'messageBox hidden' : 'messageBox'}>
             <h1>{message}</h1>
-            {state.gamestatus=== 'mainmenu'? <img className="audioPlayer" src="../volume.png" alt="Play Music" onClick={()=> mainMenuMusic.play()}/> : null} <br/>
+            {state.gamestatus=== 'mainmenu'? <img className="audioPlayer" src="../volume.png" alt="Play Music" onClick={()=> playSong()}/> : null} <br/>
             {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("SCENE_1")}>Start Game</button> : <></>}
 
         </div>
