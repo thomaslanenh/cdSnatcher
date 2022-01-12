@@ -1,0 +1,30 @@
+{
+    "gillian": {
+        "name" : "Gillian Seed",
+        "image": "/cards/gillian.jpg",
+        "hp":400,
+        "abilities":[
+            "investigate",
+            "shoot"
+        ]
+    },
+    "metalgear":{
+        "name": "Metal Gear Mk. II",
+        "image": "/cards/metalgear.jpg",
+        "hp": 200,
+        "abilities":[
+            "investigate",
+            "analyze",
+            "selfdestruct"
+        ]
+    },
+    "snatcher":{
+        "name": "Snatcher",
+        "image": "/cards/snatcher.gif",
+        "hp": 200,
+        "abilities": [
+            "shoot",
+            "analyze"
+        ]
+    }
+}

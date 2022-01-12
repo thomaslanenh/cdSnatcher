@@ -5,6 +5,8 @@ import { Context } from "./Store";
 import Card from './components/Card';
 import Intro from './components/scenes/IntroCutscene';
 
+import * as GameScene from './controllers/GameScenes';
+
 function App(props) {
   const [state, dispatch] = useContext(Context);
 
@@ -14,26 +16,25 @@ function App(props) {
       case "startgame":
         return (
           <>
-            <MessageBox message="START GAME" />
-            <Card/>
+            <GameScene.StartGame/>
           </>
         );
       case "mainmenu":
         return (
           <>
-            <MessageBox message="CD SNATCHER" />
+            <GameScene.MainMenu/>
           </>
         );
       case "scene1":
         return (
           <>
-            <Intro/>
+            <GameScene.IntroScene/>
           </>
         )
       default:
         return (
           <>
-            <p>Game Over</p>
+          <GameScene.GameOver/>
           </>
         );
     }

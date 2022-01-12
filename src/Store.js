@@ -11,6 +11,9 @@ const initialState = {
 
 const Reducer = (state, action) => {
     switch (action.type){
+        case "ADD_CARD":
+            console.log("Added card");
+            return {...state, cardsheld: action.payload}
         case "START_GAME":
             console.log("Starting Game...");
             return {...state, gamestatus: "startgame"};

@@ -1,10 +1,50 @@
 import './styles/MessageBox.scss';
-import {useContext, useState} from 'react';
+import {useContext, useState, useRef, useEffect} from 'react';
 import {Context} from '../Store';
 
 let mainMenuMusic = new Audio("/music/snatcher-sega-cd.mp3");
 
 export default function MessageBox(props){
+    const [isRunning, setRunning] = useState(false);
+
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+      
+        // Remember the latest callback.
+        useEffect(() => {
+          savedCallback.current = callback;
+        }, [callback]);
+      
+        // Set up the interval.
+        useEffect(() => {
+          function tick() {
+            savedCallback.current();
+          }
+          if (delay !== null) {
+            let id = setInterval(tick, delay);
+            return () => clearInterval(id);
+          }
+        }, [delay]);
+    }
+
+    useInterval(() => {
+        console.log(mainMenuMusic.volume);
+        if (state.gamestatus === "mainmenu") {
+            if (mainMenuMusic.volume !== 0) {
+                mainMenuMusic.volume -= 0.1;
+                // mainMenuMusic.pause();
+            }
+
+            if (mainMenuMusic.volume < 0.2){
+                mainMenuMusic.volume -= 0.1;
+            
+            }
+
+
+        } else {
+            mainMenuMusic.pause();
+        }
+    }, isRunning ? 300 : null);
 
     const [state, dispatch] = useContext(Context);
     const [playing, setPlaying] = useState(false);
@@ -23,25 +63,12 @@ export default function MessageBox(props){
         setPlaying(!playing);
     }
 
-    const changeGameStatus = (scene) => {
+   function changeGameStatus(scene) {
 
         setFade(true);
-        const fadeAudio = setInterval(() => {
-            if (state.gamestatus === "mainmenu") {
-                if (mainMenuMusic.volume !== 0) {
-                    // mainMenuMusic.volume -= 0.1;
-                    mainMenuMusic.pause();
-                }
-
-                if (mainMenuMusic.volume === 0.0) {
-                    clearInterval(fadeAudio);
-                }
-
-            } else {
-                mainMenuMusic.pause();
-            }
-        }, 300);
-
+        
+        setRunning(true);
+        
 
         setTimeout(()=> dispatch({type: scene.toString()}), 3000);
  
