@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ae9daacd.css",
+    "main.js": "/static/js/main.f2cc0446.js",
+    "static/media/CompactaStdItalic.otf": "/static/media/CompactaStdItalic.dd126af463e6d4fe6014.otf",
+    "static/media/backgroundneokobe.gif": "/static/media/backgroundneokobe.1c7cecb4e1d592d91418.gif",
+    "static/media/snatcher-sega-cd.otf": "/static/media/snatcher-sega-cd.4199c23caf3fc72937b0.otf",
+    "index.html": "/index.html",
+    "main.ae9daacd.css.map": "/static/css/main.ae9daacd.css.map",
+    "main.f2cc0446.js.map": "/static/js/main.f2cc0446.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae9daacd.css",
+    "static/js/main.f2cc0446.js"
+  ]
+}
