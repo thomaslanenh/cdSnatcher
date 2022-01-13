@@ -1,6 +1,9 @@
 import { useState, useContext } from "react";
-import BattleScene from "../BattleScene";
 
-export default function FirstBattle(params) {
-  return <BattleScene enemy="snatcher" />;
+import * as GameScene from "../../controllers/GameScenes";
+
+export default function FirstBattle(props){
+  return <>
+    <GameScene.BattleScreen enemy={['snatcher', 'snatcher']} enemyhealth={400}/>
+  </>;
 }

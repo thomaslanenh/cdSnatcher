@@ -14,9 +14,9 @@ export const IntroScene = () => {
   return <Intro />;
 };
 
-export const BattleScreen = () => {
+export const BattleScreen = (params) => {
   return <>
-    <BattleScene/>
+    <BattleScene enemy={params.enemy}/>
   </>;
 };
 

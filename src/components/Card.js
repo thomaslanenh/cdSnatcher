@@ -1,19 +1,31 @@
 import "./styles/Card.scss";
 import card_data from "./cards/cards.json";
 import ability_desc from "./cards/abilities.json";
+import {Context} from "../Store";
 import React, { useState, useContext } from "react";
 import ReactTooltip from 'react-tooltip'
+import * as Abilities from '../controllers/Abilities'
 
 export default function Cards(props) {
+
+  const [state, dispatch] = useContext(Context);
   const cardsInHand = props.cards;
 
   // Logic for Abilities Here, needs a switch statement. 
 
   const useofAbility = (ability) =>{
-      switch (ability) {
+
+      switch (ability.toLowerCase()) {
         case 'investigate':
+          return Abilities.Investigate();
+        case 'shoot':
+          return Abilities.Shoot()
+        case 'analyze':
+          return Abilities.Analyze();
+        case 'self-destruct':
+          return Abilities.SelfDestruct();
         default:
-          alert(ability);
+
       }
   }
 
@@ -21,8 +33,8 @@ export default function Cards(props) {
     <>
       {cardsInHand.map((card,index) => {
         return (
-          <>
-            <div className="cardBox flexitems">
+
+            <div className="cardBox" key={index.toString()}>
               <div className="boxCol1" style={{backgroundImage: 'url(' + card_data[card].image + ')'}}>
                 {/* <img src={card_data[card].image} alt={card_data[card].name} /> */}
               </div>
@@ -47,10 +59,9 @@ export default function Cards(props) {
                 <p>Snatcher</p>
               </div>
               <div className="infoRight">
-                <p>{card_data[card].name}</p>
+                <p>Card #:{card_data[card].cardnumber}</p>
               </div>
             </div>
-          </>
         );
       })}
     </>
