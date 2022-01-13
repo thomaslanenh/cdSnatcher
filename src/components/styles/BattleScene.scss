@@ -1,0 +1,28 @@
+@import "../../styles/shared.scss";
+
+.battleScene {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding-bottom: 25px;
+}
+
+.battleRow1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.battleRow2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

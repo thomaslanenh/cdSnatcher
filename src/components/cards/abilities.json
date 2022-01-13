@@ -1,0 +1,26 @@
+{
+    "investigate": {
+        "name": "Investigate",
+        "text": "Investigate the enemy players hand.",
+        "cost": 20,
+        "damage": 0
+    },
+    "shoot":{
+        "name": "Shoot",
+        "text": "Attack the enemy player. Causes 10 damage.",
+        "cost": 5,
+        "damage": 10
+    },
+    "analyze":{
+        "name": "Analyze",
+        "text": "Analyze the enemy players stats. Chance to capture random enemy card.",
+        "cost": 25,
+        "damage": 0
+    },
+    "selfdestruct": {
+        "name": "Self-Destruct",
+        "text": "Self destruct, dealing heavy damage and retiring this card.",
+        "cost": 5,
+        "damage": 100
+    }
+}

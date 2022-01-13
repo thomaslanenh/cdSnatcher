@@ -1,8 +1,9 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  gamestatus: "mainmenu",
+  gamestatus: "battlescreen",
   cardsheld: ['gillian', 'metalgear'],
+  playerlife: 1000,
   showdialogue: false,
   currentdialogueindex: 0,
   dialogue: "",
@@ -14,15 +15,9 @@ const Reducer = (state, action) => {
         case "ADD_CARD":
             console.log("Added card");
             return {...state, cardsheld: action.payload}
-        case "START_GAME":
-            console.log("Starting Game...");
-            return {...state, gamestatus: "startgame"};
-        case "MAIN_MENU":
-            console.log("Hit main menu");
-            return {...state, gamestatus: "mainmenu"};
-        case "SCENE_1":
-            console.log("Hit scene 1");
-            return {...state, gamestatus: "scene1"}
+        case "CHANGE_SCENE":
+            console.log("Requested scene: " + action.payload);
+            return {...state, gamestatus: action.payload}
         case "START_DIALOGUE":
             console.log("Dialogue starting");
             return {...state, showdialogue: true}
@@ -41,6 +36,9 @@ const Reducer = (state, action) => {
         case "CHANGE_DIALOGUE_LINE":
             console.log("Changed dialogue line");
             return {...state, currentdialogueindex: action.payload};
+        case "UPDATE_LIFE":
+            console.log("Updateed life ");
+            return {...state, playerlife: action.payload};
         default:
             console.log("Game Over");
             throw new Error();

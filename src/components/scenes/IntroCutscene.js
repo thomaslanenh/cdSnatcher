@@ -32,10 +32,9 @@ export default function Intro(params) {
   };
 
   return (
-    <div className="diagBox" tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
-      {console.log("current set state: " + state.currentdialogueindex)}
+    <div className="diagBox">
       <DialogueBox
-        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text}
+        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text} xLoc="center" yLoc="bottom"
       />
     </div>
   );

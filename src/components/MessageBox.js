@@ -37,7 +37,6 @@ export default function MessageBox(props){
 
             if (mainMenuMusic.volume < 0.2){
                 mainMenuMusic.volume -= 0.1;
-            
             }
 
 
@@ -78,7 +77,7 @@ export default function MessageBox(props){
         <div className={fade ? 'messageBox hidden' : 'messageBox'}>
             <h1>{message}</h1>
             {state.gamestatus=== 'mainmenu'? <img className="audioPlayer" src="../volume.png" alt="Play Music" onClick={()=> playSong()}/> : null} <br/>
-            {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("SCENE_1")}>Start Game</button> : <></>}
+            {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("BATTLE_SCENE")}>Start Game</button> : <></>}
         </div>
     )
 }

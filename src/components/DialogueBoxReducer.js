@@ -19,6 +19,17 @@ export default function DialogueBox(params){
         }
     };
 
+    const handleKeyPress = (event) => {
+        const code = event.keyCode || event.charCode;
+    
+        if (code === 32) {
+          console.log("Space hit");
+          dispatch({type:"CHANGE_DIALOGUE_INDEX", payload: 0});
+          dispatch({type:"CHANGE_DIALOGUE", payload: ""});
+          dispatch({type: "CHANGE_DIALOGUE_LINE", payload: state.currentdialogueindex + 1});
+          // changeDialogueStatus(parseInt(state.currentdialogueindex + 1));
+        }
+      };
    
     useEffect(()=> {
         const interval = setInterval(()=> {
@@ -37,7 +48,7 @@ export default function DialogueBox(params){
     
     
     return(
-        <div className="dialogueBox">
+        <div className="dialogueBox" tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
             {console.log("Dialogue: " + state.dialogue)}
             <p>{state.dialogue}</p>
         </div>

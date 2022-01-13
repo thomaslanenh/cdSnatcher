@@ -2,10 +2,10 @@ import "./App.scss";
 import MessageBox from "./components/MessageBox";
 import React, { useState, createContext, useContext } from "react";
 import { Context } from "./Store";
-import Card from './components/Card';
-import Intro from './components/scenes/IntroCutscene';
+import Card from "./components/Card";
+import Intro from "./components/scenes/IntroCutscene";
 
-import * as GameScene from './controllers/GameScenes';
+import * as GameScene from "./controllers/GameScenes";
 
 function App(props) {
   const [state, dispatch] = useContext(Context);
@@ -16,36 +16,44 @@ function App(props) {
       case "startgame":
         return (
           <>
-            <GameScene.StartGame/>
+            <GameScene.StartGame />
           </>
         );
       case "mainmenu":
         return (
           <>
-            <GameScene.MainMenu/>
+            <GameScene.MainMenu />
           </>
         );
       case "scene1":
         return (
           <>
-            <GameScene.IntroScene/>
+            <GameScene.IntroScene />
+          </>
+        );
+      case "battlescreen":
+        return (
+          <>
+          <GameScene.BattleScreen/>
+          </>
+        );
+      case "firstbattle":
+        return (
+          <>
+          <GameScene.FirstBattleScreen/>
           </>
         )
       default:
         return (
           <>
-          <GameScene.GameOver/>
+            <GameScene.GameOver />
           </>
         );
     }
   };
 
   // console.log("State is: " + gameState);
-  return (
-    <div className="defaultBackground">
-      {renderSwitch(state)}
-    </div>
-  );
+  return <div className="defaultBackground">{renderSwitch(state)}</div>;
 }
 
 export default App;

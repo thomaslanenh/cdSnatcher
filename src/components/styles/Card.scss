@@ -1,41 +1,99 @@
+@import "../../styles/shared.scss";
+
 /* card box */
 .cardBox {
+  background: #ffffff40;
+  width: 200px;
+  border: 2px solid hsla(0, 100%, 0%, 0.39);
+  border-radius: 5px 5px 5px 5px;
+  text-align: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  background: rgba(187, 205, 243, 0.44);
-  width: 200px;
-  border: 2px solid red;
-  border-radius: 25px 25px 25px 25px;
-  text-align: center;
-}
-
-.cardBox .boxCol1 {
-  grid-area: 1 / 1 / 2 / 2;
-  align-self: center;
-  justify-self: center;
-}
-
-.cardBox .boxCol2 {
-  grid-area: 1 / 2 / 2 / 3;
+  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100%;
+  margin-left: 25px;
 }
 
 .cardBox h1 {
-  width: 50%;
-  font-size: 18px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  color: white;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 
-.cardBox img {
-  max-width: 100%;
-  border-top-right-radius: 23px;
+.cardBox a {
+  font-size: 18px;
+  color: white;
+  font-family: $snatcherText;
+  transition: 0.3s ease-in-out;
+}
+
+.cardBox a:hover {
+  opacity: 0.5;
+}
+
+.cardBox p {
+  font-size: 10px;
+}
+
+/* card contents */
+
+.cardBox .boxCol1 {
+  background-size: cover;
+  background-position: center;
+  content: "";
+  grid-area: 1 / 1 / 2 / 3;
+  align-self: center;
+  justify-self: center;
+  height: 110px;
+  width: 100%;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.cardBox .boxCol2 {
+  grid-area: 2 / 1 / 3 / 2;
+  align-self: center;
+}
+
+.boxCol2 p {
+  margin: 0px;
+}
+
+.boxCol3 {
+  grid-area: 2 / 2 / 3 / 3;
+  text-transform: uppercase;
 }
 
 /* ability box */
 .abilityBox {
-  grid-area: 2 / 1 / 3 / 3;
-  background: black;
+  grid-area: 3 / 1 / 4 / 3;
+  background: #000000b8;
+  padding-top: 10px;
+}
+
+.infoLeft {
+  grid-area: 4 / 1 / 5 / 2;
+  align-self: center;
+}
+
+.infoRight {
+  grid-area: 4 / 2 / 5 / 3;
+  align-self: center;
+}
+
+.infoLeft p,
+.infoRight p {
+  font-size: 6px;
+}
+
+/* styling of abilities */
+.nameBox {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
