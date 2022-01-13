@@ -8,6 +8,7 @@ const initialState = {
   currentdialogueindex: 0,
   dialogue: "",
   letterindex: 0,
+  nukes: false
 };
 
 const Reducer = (state, action) => {
@@ -39,6 +40,9 @@ const Reducer = (state, action) => {
         case "UPDATE_LIFE":
             console.log("Updateed life ");
             return {...state, playerlife: action.payload};
+        case "METAL_GEAR_HAD_NUKES":
+            console.log("Oh dear...");
+            return {...state, nukes: true}
         default:
             console.log("Game Over");
             throw new Error();

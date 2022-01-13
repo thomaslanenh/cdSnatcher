@@ -4,6 +4,7 @@ import Cards from "./Card";
 import './styles/BattleScene.scss';
 
 export default function BattleScene(params) {
+    console.log(params)
   const [state, dispatch] = useContext(Context);
 
   const [turn, setTurn] = useState(0);
