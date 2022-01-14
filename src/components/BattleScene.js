@@ -24,8 +24,6 @@ export default function BattleScene(params) {
         }
     }, [])
 
-
-
     return (
     <>
     <div className="battleScene">

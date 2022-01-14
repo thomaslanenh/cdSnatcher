@@ -19,22 +19,22 @@ export default function Intro(params) {
   // };
 
   // This changes the dialogue index which sets which line of text.
-  const handleKeyPress = (event) => {
-    const code = event.keyCode || event.charCode;
+  // const handleKeyPress = (event) => {
+  //   const code = event.keyCode || event.charCode;
 
-    if (code === 32) {
-      console.log("Space hit");
-      dispatch({type:"CHANGE_DIALOGUE_INDEX", payload: 0});
-      dispatch({type:"CHANGE_DIALOGUE", payload: ""});
-      dispatch({type: "CHANGE_DIALOGUE_LINE", payload: state.currentdialogueindex + 1});
-      // changeDialogueStatus(parseInt(state.currentdialogueindex + 1));
-    }
-  };
+  //   if (code === 32) {
+  //     console.log("Space hit");
+  //     dispatch({type:"CHANGE_DIALOGUE_INDEX", payload: 0});
+  //     dispatch({type:"CHANGE_DIALOGUE", payload: ""});
+  //     dispatch({type: "CHANGE_DIALOGUE_LINE", payload: state.currentdialogueindex + 1});
+  //     // changeDialogueStatus(parseInt(state.currentdialogueindex + 1));
+  //   }
+  // };
 
   return (
     <div className="diagBox">
       <DialogueBox
-        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text} xLoc="center" yLoc="bottom"
+        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text} xLoc="xcenter" yLoc="ycenter" color="blue"
       />
     </div>
   );

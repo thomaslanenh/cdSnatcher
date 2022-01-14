@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import {Context} from '../Store';
 
 export default function DialogueBox(params){
+
     const [state, dispatch] = useContext(Context);
 
     const letterArray = params.text.split(/\b/);
@@ -48,7 +49,7 @@ export default function DialogueBox(params){
     
     
     return(
-        <div className="dialogueBox" tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
+        <div className={'dialogueBox ' + params.xLoc + ' ' + params.yLoc} tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
             {console.log("Dialogue: " + state.dialogue)}
             <p>{state.dialogue}</p>
         </div>

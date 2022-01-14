@@ -1,10 +1,10 @@
-import './styles/MessageBox.scss';
+import '../styles/MainMenu.scss';
 import {useContext, useState, useRef, useEffect} from 'react';
-import {Context} from '../Store';
+import {Context} from '../../Store';
 
 let mainMenuMusic = new Audio("/music/snatcher-sega-cd.mp3");
 
-export default function MessageBox(props){
+export default function MainMenu(props){
     const [isRunning, setRunning] = useState(false);
 
     function useInterval(callback, delay) {
@@ -51,33 +51,27 @@ export default function MessageBox(props){
 
     let message = props.message;
 
-    const playSong = () => {
-        if (playing === false){
-            mainMenuMusic.play();
-        }
-        else {
-            mainMenuMusic.pause();
-        }
+   function changeGameStatus(statecall, scene) {
 
         setPlaying(!playing);
-    }
-
-   function changeGameStatus(scene) {
 
         setFade(true);
         
         setRunning(true);
         
 
-        setTimeout(()=> dispatch({type: scene.toString()}), 3000);
+        setTimeout(()=> dispatch({type: statecall.toString(), payload: scene.toString()}), 3000);
  
-      }
+    }
+
+    if (playing === false){
+        mainMenuMusic.play();
+    }
 
     return(
         <div className={fade ? 'messageBox hidden' : 'messageBox'}>
             <h1>{message}</h1>
-            {state.gamestatus=== 'mainmenu'? <img className="audioPlayer" src="../volume.png" alt="Play Music" onClick={()=> playSong()}/> : null} <br/>
-            {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("BATTLE_SCENE")}>Start Game</button> : <></>}
+            {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("CHANGE_SCENE", "scene1")}>Start Game</button> : <></>}
         </div>
     )
 }

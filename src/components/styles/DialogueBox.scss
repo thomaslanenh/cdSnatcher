@@ -1,12 +1,12 @@
+@import "../../styles/shared.scss";
+
 .dialogueBox {
   background: hsla(232, 100%, 7%, 0.78);
   border: 5px solid white;
   width: 55%;
   padding: 0px 25px 0px 25px;
-  margin-top: 20%;
   line-height: 2em;
-  height: 140px;
-  margin-left: auto;
+  height: 100%;
   margin-right: auto;
   text-align: left;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -17,6 +17,7 @@
 }
 
 .dialogueBox p {
+  font-family: $snatcherText;
   font-size: 20px;
   color: white;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -24,4 +25,31 @@
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
+}
+
+// xloc positionals
+.xleft {
+  margin-left: 20px;
+}
+
+.xright {
+  margin-left: 80%;
+}
+
+.xcenter {
+  margin-left: auto;
+}
+
+// yloc positionals
+
+.ytop {
+  margin-top: 20px;
+}
+
+.ybottom {
+  margin-top: 40%;
+}
+
+.ycenter {
+  margin-top: 20%;
 }

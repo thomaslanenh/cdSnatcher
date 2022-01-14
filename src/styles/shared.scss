@@ -10,24 +10,49 @@
     url(../../public/fonts/CompactaStdItalic.otf) format("opentype");
 }
 
+@font-face {
+  font-family: "Pixter Display Bold";
+  src: local("Pixter Display Bold"),
+    url(../../public/fonts/PixterDisplayBold.ttf) format("truetype");
+}
+
+// Font Families
 $snatcherText: "Snatcher SegaCD";
 $snatcherTitle: "Compacta";
+$snatcherIntro: "Pixter Display Bold";
 
 // Colors
 $snatcherFont: #2ad0cd;
 
-h1 {
-  margin: 0px;
-  font-family: $snatcherTitle;
-}
-
 a {
   cursor: pointer;
 }
-p,
-button {
-  font-family: $snatcherText;
-  color: $snatcherFont;
+
+/* mobile styling */
+$breakpoints: (
+  "small": 767px,
+  "medium": 992px,
+  "large": 1200px,
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Kitty Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
 }
 
 @keyframes fadein {

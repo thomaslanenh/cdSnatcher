@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  gamestatus: "mainmenu",
+  gamestatus: "startup",
   cardsheld: ['gillian', 'metalgear'],
   playerlife: 1000,
   showdialogue: false,

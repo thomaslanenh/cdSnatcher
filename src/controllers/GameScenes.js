@@ -1,13 +1,18 @@
 import { useContext, useState } from "react";
 import {Context} from '../Store';
-import MessageBox from "../components/MessageBox";
+import MainMenu from "../components/scenes/MainMenu";
 import Card from '../components/Card';
 import Intro from "../components/scenes/IntroCutscene";
 import BattleScene from '../components/BattleScene';
 import FirstBattle from "../components/scenes/FirstBattle";
+import StartUpScreen from "../components/scenes/StartUpScreens";
 
-export const MainMenu = () => {
-  return <MessageBox message="CD SNATCHER" />;
+export const GameStartScreen = () => {
+  return <StartUpScreen/>
+}
+
+export const MainMenuScene = () => {
+  return <MainMenu message="CD SNATCHER" />;
 };
 
 export const IntroScene = () => {
@@ -20,13 +25,6 @@ export const BattleScreen = (params) => {
   </>;
 };
 
-export const StartGame = () => {
-  return (
-    <>
-      <MessageBox message="START GAME" />
-    </>
-  );
-};
 
 export const GameOver = () => {
     return (
