@@ -8,7 +8,9 @@ const initialState = {
   currentdialogueindex: 0,
   dialogue: "",
   letterindex: 0,
-  nukes: false
+  nukes: false,
+  enemyhealth: 20,
+  turn: 0,
 };
 
 const Reducer = (state, action) => {
@@ -43,6 +45,12 @@ const Reducer = (state, action) => {
         case "METAL_GEAR_HAD_NUKES":
             console.log("Oh dear...");
             return {...state, nukes: true}
+        case "SET_ENEMY_HEALTH":
+            console.log("Enemy health set");
+            return {...state, enemyhealth: action.payload}
+        case "CHANGE_TURN":
+            console.log("Changed Turn");
+            return {...state, turn: action.payload};
         default:
             console.log("Game Over");
             throw new Error();

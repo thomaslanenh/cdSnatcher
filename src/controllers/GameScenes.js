@@ -21,7 +21,7 @@ export const IntroScene = () => {
 
 export const BattleScreen = (params) => {
   return <>
-    <BattleScene enemy={params.enemy}/>
+    <BattleScene enemy={params.enemy} enemyhealth={params.enemyhealth} nextscene={params.nextscene}/>
   </>;
 };
 

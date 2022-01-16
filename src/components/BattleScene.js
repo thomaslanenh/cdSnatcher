@@ -10,34 +10,38 @@ export default function BattleScene(params) {
 
     const [state, dispatch] = useContext(Context);
 
-    const [turn, setTurn] = useState(0);
-
-    let [playerhealth, setPlayerHealth] = useState(parseInt(state.playerlife));
-
     const [enemyCardHealth, setEnemyCardHealth] = useState(0);
 
     useEffect(()=>{
         for (let value of params.enemy){
             console.log('key: ' + value);
             return setEnemyCardHealth(enemyCardHealth + parseInt(card_data[value].hp));
-
         }
     }, [])
+
+    useEffect(()=>{
+        if (state.enemyhealth === 0){
+            dispatch({type: 'CHANGE_SCENE', payload: params.nextscene})
+        }
+    })
 
     return (
     <>
     <div className="battleScene">
-        <div className="playerHealth">
-            <h2>{playerhealth}</h2>
+        <div className="enemyHealth">
+            <h2>Enemy Health: {state.enemyhealth}</h2>
         </div>
         <div className="battleRow1">
            {params.enemy ? <EnemyCards enemy={params.enemy}/> : null}
         </div>
-        <div className="battleField">
-            <p>BATTLEFIELD HERE</p>
-        </div>
+        {/* <div className="battleField">
+            
+        </div> */}
         <div className="battleRow2 flex-container">
             <Cards cards={state.cardsheld} />
+        </div>
+        <div className="playerHealth">
+            <h2>Player Health: {state.playerlife}</h2>
         </div>
     </div>
     </>

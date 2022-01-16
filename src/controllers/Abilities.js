@@ -1,7 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {Context} from '../Store';
-
-
 
 export const Investigate =(params)=>{
     window.open('/PMScenes/Investigate.html')
@@ -13,10 +11,16 @@ export const Investigate =(params)=>{
 }
 
 export const Shoot = (params) => {
-
     const [state, dispatch] = useContext(Context);
 
-    return <></>
+    let newEnemyHealth = (state.enemyhealth - 10);
+    console.log(newEnemyHealth);
+    useEffect(()=>{
+        dispatch({type:"SET_ENEMY_HEALTH", payload: newEnemyHealth})
+    },[])
+
+  
+    return <></>;
 }
 
 export const Analyze = (params) => {

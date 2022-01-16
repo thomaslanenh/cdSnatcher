@@ -1,14 +1,24 @@
 import "./styles/Card.scss";
 import card_data from "./cards/cards.json";
 import ability_desc from "./cards/abilities.json";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../Store";
 import ReactTooltip from 'react-tooltip'
 
 export default function EnemyCards(props) {
     const cardsInHand = props.enemy;
 
+    const [state,dispatch] = useContext(Context);
     // Logic for Abilities Here, needs a switch statement.
 
+    useEffect(()=>{
+        if (state.turn === 1){
+            let newplayerLife = (state.playerlife - 10);
+
+            dispatch({type: 'UPDATE_LIFE', payload: newplayerLife});
+            dispatch({type: 'CHANGE_TURN', payload: 0})
+        }
+    })
 
     return (
         <>

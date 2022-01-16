@@ -71,7 +71,8 @@ export default function MainMenu(props){
     return(
         <div className={fade ? 'messageBox hidden' : 'messageBox'}>
             <h1>{message}</h1>
-            {state.gamestatus === 'mainmenu' ? <button onClick={()=>changeGameStatus("CHANGE_SCENE", "scene1")}>Start Game</button> : <></>}
+            <button onClick={()=>changeGameStatus("CHANGE_SCENE", "scene1")}>Start Game</button>
+            <p>Developed by <a href="https://www.parkerlanedevelopment.com" target="_blank" rel="noreferrer">Thomas Lane</a>. Snatcher and all associated rights © Konami.</p>
         </div>
     )
 }

@@ -34,7 +34,7 @@ export default function Intro(params) {
   return (
     <div className="diagBox">
       <DialogueBox
-        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text} xLoc="xcenter" yLoc="ycenter" color="blue"
+        text={scriptdata.introDialogue[parseInt(state.currentdialogueindex)].text} xLoc="xcenter" yLoc="ycenter" color="blue" nextstate='firstbattle'
       />
     </div>
   );

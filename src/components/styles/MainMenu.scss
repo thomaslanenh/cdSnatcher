@@ -1,9 +1,5 @@
 @import "../../styles/shared.scss";
 
-.messageBox {
-  height: 100vh;
-}
-
 .messageBox h1 {
   margin: 0px;
   font-family: $snatcherTitle;
@@ -18,6 +14,17 @@
   text-align: center;
 }
 
+.messageBox p,
+.messageBox a {
+  padding-top: 10%;
+  animation-name: fadein;
+  opacity: 0;
+  animation-delay: 2000ms;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  color: white;
+  font-size: 10px;
+}
 .audioPlayer {
   -webkit-filter: invert(100%); /* Safari/Chrome */
   filter: invert(100%);
@@ -33,7 +40,7 @@
   opacity: 0.5;
 }
 
-button {
+.messageBox button {
   animation-name: fadein;
   opacity: 0;
   animation-delay: 2000ms;

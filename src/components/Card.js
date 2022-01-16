@@ -2,7 +2,7 @@ import "./styles/Card.scss";
 import card_data from "./cards/cards.json";
 import ability_desc from "./cards/abilities.json";
 import {Context} from "../Store";
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactTooltip from 'react-tooltip'
 import * as Abilities from '../controllers/Abilities'
 
@@ -14,19 +14,35 @@ export default function Cards(props) {
   // Logic for Abilities Here, needs a switch statement. 
 
   const useofAbility = (ability) =>{
-
+    if (state.turn === 0){
       switch (ability.toLowerCase()) {
         case 'investigate':
-          return Abilities.Investigate();
+          window.open('/PMScenes/Investigate.html')
+          dispatch({type: "CHANGE_TURN", payload: 1});
+          return (
+                <>
+                    {alert("Investigion Complete.")}
+                </>
+            )
         case 'shoot':
-          return Abilities.Shoot()
+            let newEnemyHealth = (state.enemyhealth - 10);
+            dispatch({type: "CHANGE_TURN", payload: 1});
+            console.log(newEnemyHealth);
+            dispatch({type:"SET_ENEMY_HEALTH", payload: newEnemyHealth})
+          return
         case 'analyze':
-          return Abilities.Analyze();
+          dispatch({type: "CHANGE_TURN", payload: 1});
+          return alert("Analyze");
         case 'self-destruct':
-          return Abilities.SelfDestruct();
+          dispatch({type: "CHANGE_TURN", payload: 1});
+          return alert('DESTRUCTION!');
         default:
 
       }
+    }
+    else {
+      alert("Wait your turn!");
+    }
   }
 
   return (

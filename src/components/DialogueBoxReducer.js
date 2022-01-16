@@ -30,7 +30,11 @@ export default function DialogueBox(params){
           dispatch({type: "CHANGE_DIALOGUE_LINE", payload: state.currentdialogueindex + 1});
           // changeDialogueStatus(parseInt(state.currentdialogueindex + 1));
         }
-      };
+    };
+
+    const changeState = (event)=>{
+        dispatch({type:"CHANGE_SCENE", payload: params.nextstate});
+    }
    
     useEffect(()=> {
         const interval = setInterval(()=> {
@@ -51,7 +55,7 @@ export default function DialogueBox(params){
     return(
         <div className={'dialogueBox ' + params.xLoc + ' ' + params.yLoc} tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
             {console.log("Dialogue: " + state.dialogue)}
-            {state.dialogue !== "BREAK" ? <p>{state.dialogue}</p> : <p>OVER</p>}
+            {state.dialogue !== "BREAK" ? <p>{state.dialogue}</p> : changeState()}
         </div>
     )
 }
