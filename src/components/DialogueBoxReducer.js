@@ -51,7 +51,7 @@ export default function DialogueBox(params){
     return(
         <div className={'dialogueBox ' + params.xLoc + ' ' + params.yLoc} tabIndex={-1} onKeyUp={(e) => handleKeyPress(e)}>
             {console.log("Dialogue: " + state.dialogue)}
-            <p>{state.dialogue}</p>
+            {state.dialogue !== "BREAK" ? <p>{state.dialogue}</p> : <p>OVER</p>}
         </div>
     )
 }

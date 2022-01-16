@@ -13,7 +13,7 @@ body {
 
 .startUp p {
   margin-top: 0px;
-  padding-top: 10%;
+  padding-top: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,18 +33,22 @@ body {
   }
 }
 
-.startUp a {
+.startUp button {
+  cursor: pointer;
+  background: transparent;
   color: white;
-  font-size: 25px;
   font-family: $snatcherIntro;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  animation: textShadow 1.6s infinite;
+  font-size: 25px;
   animation-name: fadein;
   opacity: 0;
   animation-delay: 5000ms;
   animation-duration: 10s;
   animation-fill-mode: forwards;
+
+  @include respond-to("small") {
+    font-size: 15px;
+  }
 }
 
 @keyframes textShadow {

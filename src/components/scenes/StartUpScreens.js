@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Context } from "../../Store";
 import "../styles/StartUpScreens.scss";
 
-const menuSelect = new Audio('/music/mainmenuselect.mp3');
+const menuSelect = new Audio('/music/SNATCHERSELECT.mp3');
 
 
 export default function StartUpScreen() {
@@ -17,15 +17,15 @@ export default function StartUpScreen() {
        setTimeout(function(){
         dispatch({type: 'CHANGE_SCENE', payload: 'mainmenu'});
         
-       },3000)
+       },2000)
        
 
     }
 
   return (
-    <div className="startUp">
+    <article className="startUp">
       <p>The story, characters,<br/> and events, in this game<br/> are entirely fictional. <br/>Any similarities to<br/> actual people, places<br/> and events are entirely<br/> coincidental.</p>
-      <a onClick={e=>musicPlayer()}>Press to Continue</a>
-    </div>
+      <button onClick={e=>musicPlayer()}>Press to Continue</button>
+    </article>
   );
 }
