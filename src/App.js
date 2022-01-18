@@ -16,6 +16,12 @@ function App(props) {
           <GameScene.GameStartScreen/>
           </>
         )
+        case 'firstscene':
+          return (
+            <>
+            <GameScene.FirstDialogueScene/>
+            </>
+          )
       case "mainmenu":
         return (
           <>

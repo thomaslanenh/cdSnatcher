@@ -33,6 +33,9 @@ export default function DialogueBox(params){
     };
 
     const changeState = (event)=>{
+        dispatch({type:"CHANGE_DIALOGUE_LINE", payload: 0})
+        dispatch({type:"CHANGE_DIALOGUE_INDEX", payload: 0});
+        dispatch({type:"CHANGE_DIALOGUE", payload: ""});
         dispatch({type:"CHANGE_SCENE", payload: params.nextstate});
     }
    

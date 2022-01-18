@@ -8,6 +8,7 @@ import './styles/BattleScene.scss';
 
 export default function BattleScene(params) {
 
+    console.log('next scene is: ' + params.nextscene);
     const [state, dispatch] = useContext(Context);
 
     const [enemyCardHealth, setEnemyCardHealth] = useState(0);

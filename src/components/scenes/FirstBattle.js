@@ -16,6 +16,6 @@ export default function FirstBattle(props){
   },[])
 
   return <>
-    <GameScene.BattleScreen enemy={['snatcher', 'snatcher']} nextscene="mainmenu"/>
+    <GameScene.BattleScreen enemy={['snatcher', 'snatcher']} nextscene="firstscene"/>
   </>;
 }

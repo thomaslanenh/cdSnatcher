@@ -9,5 +9,103 @@
     "2": {
       "text": "BREAK"
     }
+  },
+  "scene1": {
+    "0": {
+      "text": "A mysterious explosion destroys the Chernoton research facility near Moscow. Lucifer-Alpha..."
+    },
+    "1": {
+      "text": " A powerful biological weapon under secret development there is released into the atmosphere, creating a deadly biohazard."
+    },
+    "2": {
+      "text": "Carried by the trade-winds, Lucipher-Alpha spreads throughout Eastern Europe and Eurasia, destroying 80% of the populace. "
+    },
+    "3": {
+      "text": "Half of the world's people die. The greatest biohazard in history later becomes known simply as..."
+    },
+    "4": {
+      "text": "The Catastrophe."
+    },
+    "5": {
+      "text": "But at this time, who could have possibly imagined that the ultimate biohazard wouldn't have occurred for another half-century?"
+    }
+  },
+  "scene2": {
+    "0": {
+      "text": "50 Years Later.."
+    },
+    "1": {
+      "text": "Mankind faces its greatest crisis. The mysterious appearance of an android life-form. Its purpose and origin are unknown."
+    },
+    "2": {
+      "text": "Is it a new form of weapon? Or perhaps an invasion from some other world? They appear during winter, killing humans, and infilitrating society by taking place of their victims."
+    },
+    "3": {
+      "text": "Employing an artificial skin, they can sweat - and even bleed. Part organic; part machine; they're almost impossible to distinguish from those they kill."
+    },
+    "4": {
+      "text": "As they steal their victims' bodies in order to take their place..."
+    },
+    "5": {
+      "text": "These mysterious invaders become known as..."
+    },
+    "6": {
+      "text": "Snatchers."
+    }
+  },
+  "scene3": {
+    "0": {
+      "text": "Dec. 2047 \n Neo Kobe City"
+    }
+  },
+  "scene4": {
+    "0": {
+      "text": "How was work? Was everything okay?",
+      "character": "Gillian"
+    },
+    "1": {
+      "text": "Mmmmm.... Gillian, what is it? What's wrong?",
+      "character": "Jamie"
+    },
+    "2": {
+      "text": "Janie... I've become a J.U.N.K.E.R.",
+      "character": "Gillian"
+    },
+    "3": {
+      "text": "A JUNKER? Gillian, but why?",
+      "character": "Jamie"
+    },
+    "4": {
+      "text": "Jamie, you know why. It's the only way we can regain our lost memories.",
+      "character": "Gillian"
+    },
+    "5": {
+      "text": "Snatcher is the only word that keeps coming back every time we try to remember our past. I have to face them to find out why.",
+      "character": "Gillian"
+    },
+    "6": {
+      "text": "Yes, but I can sense that there is something terrible hidden in our past, and if we remember it, it will destroy us!",
+      "character": "Jamie"
+    },
+    "7": {
+      "text": "Jamie...!",
+      "character": "Gillian"
+    },
+    "8": {
+      "text": "[mostly unintelligible] Transport THX-205 for Gillian Seed. Now departing immediately for Junker Headquarters.",
+      "character": "Turbocycle"
+    },
+    "9": {
+      "text": "I'm...going now",
+      "character": "Gillian"
+    },
+    "10": {
+      "text": "Jamie! [Muffled by sound of turbocycle]",
+      "character": "Gillian"
+    },
+    "11": {
+      "text": "What? I can't hear you!",
+      "character": "Jillian"
+    }
   }
 }
