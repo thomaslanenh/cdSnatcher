@@ -4,20 +4,95 @@
     "image": "/cards/gillian.jpg",
     "hp": 400,
     "abilities": ["investigate", "shoot"],
-    "cardnumber": 1
+    "flavortext": "MC",
+    "cardnumber": 1,
+    "up": 6,
+    "down": 6,
+    "left": 7,
+    "right": 8
   },
   "metalgear": {
     "name": "Metal Gear",
     "image": "/cards/metalgear.jpg",
     "hp": 200,
     "abilities": ["investigate", "analyze", "selfdestruct"],
-    "cardnumber": 2
+    "flavortext": "",
+    "cardnumber": 2,
+    "up": 4,
+    "down": 4,
+    "left": 5,
+    "right": 6
   },
   "snatcher": {
     "name": "Snatcher",
     "image": "/cards/snatcher.gif",
     "hp": 200,
     "abilities": ["shoot"],
-    "cardnumber": 32
+    "flavortext": "",
+    "cardnumber": 32,
+    "up": 4,
+    "down": 4,
+    "left": 4,
+    "right": 4
+  },
+  "mika": {
+    "name": "Mika Slayton",
+    "image": "/cards/mika.png",
+    "hp": 200,
+    "abilities": ["investigate"],
+    "flavortext": "",
+    "cardnumber": 3,
+    "up": 4,
+    "down": 1,
+    "left": 5,
+    "right": 2
+  },
+  "benson": {
+    "name": "Benson Cunningham",
+    "image": "/cards/benson.jpg",
+    "hp": 100,
+    "abilities": ["investigate"],
+    "flavortext": "Benson's always right!",
+    "cardnumber": 4,
+    "up": 2,
+    "down": 7,
+    "left": 3,
+    "right": 8
+  },
+  "harry": {
+    "name": "Harry Benson",
+    "image": "/cards/harry.jpg",
+    "hp": 100,
+    "abilities": ["fix", "investigate"],
+    "flavortext": "",
+    "cardnumber": 5,
+    "up": 4,
+    "down": 4,
+    "left": 4,
+    "right": 4
+  },
+  "jeanjack": {
+    "name": "Jean Jack Gibson",
+    "image": "/cards/gibson.jpg",
+    "hp": 500,
+    "abilities": ["shoot", "investigate"],
+    "flavortext": "",
+    "cardnumber": 100,
+    "up": 8,
+    "down": 8,
+    "left": 8,
+    "right": 8
+  },
+  "napoleon": {
+    "name": "Napoleon",
+    "image": "/cards/napoleon.jpg",
+    "hp": 100,
+    "abilities": ["scam"],
+    "flavortext": "",
+    "cardnumber": 6,
+    "up": 5,
+    "down": 1,
+    "left": 6,
+    "right": 2
   }
 }

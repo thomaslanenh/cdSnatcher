@@ -7,6 +7,7 @@ import BattleScene from '../components/BattleScene';
 import FirstBattle from "../components/scenes/FirstBattle";
 import StartUpScreen from "../components/scenes/StartUpScreens";
 import FirstScene from "../components/scenes/FirstScene";
+import TestBattle from '../components/TestBattle';
 
 export const GameStartScreen = () => {
   return <StartUpScreen/>
@@ -30,6 +31,9 @@ export const FirstDialogueScene = () => {
   return <FirstScene />
 };
 
+export const TestBattleScreen = (params) => {
+  return <TestBattle/>
+};
 
 export const GameOver = () => {
     return (

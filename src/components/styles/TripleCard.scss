@@ -1,0 +1,28 @@
+@import "../../styles/shared.scss";
+
+.tripleCard {
+  border: 2px solid blue;
+  margin-bottom: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: overlay;
+  width: 150px;
+  height: 100%;
+}
+
+.playerHand .tripleCard,
+.leftHand .tripleCard {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tripleCard p {
+  font-weight: bold;
+  margin: 0px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.tripleCard h2 {
+  font-size: 15px;
+}

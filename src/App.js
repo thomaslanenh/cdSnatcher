@@ -15,13 +15,19 @@ function App(props) {
           <>
           <GameScene.GameStartScreen/>
           </>
-        )
+        );
         case 'firstscene':
           return (
             <>
             <GameScene.FirstDialogueScene/>
             </>
-          )
+          );
+        case 'testscene':
+          return (
+            <>
+            <GameScene.TestBattleScreen/>
+            </>
+          );
       case "mainmenu":
         return (
           <>
