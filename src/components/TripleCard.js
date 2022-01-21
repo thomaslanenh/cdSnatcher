@@ -7,7 +7,7 @@ import './styles/TripleCard.scss';
 export default function TripleCard(params) {
     console.log(params.card);
     return (
-        <div className="tripleCard" style={{backgroundImage: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.8309524493391106) 35%, rgba(0,212,255,1) 100%), url(' + card_data[params.card].image + ')'}}>
+        <div className="tripleCard" style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url(' + card_data[params.card].image + ')'}}>
             <div className="cardStats" >
                 <h2 data-tip={card_data[params.card].flavortext}>{card_data[params.card].name}</h2>
                 <ReactTooltip/>
