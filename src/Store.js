@@ -2,7 +2,8 @@ import { createContext, useReducer } from "react";
 
 const initialState = {
   gamestatus: "testscene",
-  cardsheld: ['metalgear', 'mika', 'benson', 'harry', 'napoleon'],
+  cardsheld: ['gillian','metalgear', 'mika', 'benson', 'harry', 'napoleon'],
+  playinghand: ['gillian','metalgear', 'mika', 'benson', 'harry', 'napoleon'],
   playerlife: 1000,
   showdialogue: false,
   currentdialogueindex: 0,
@@ -18,6 +19,9 @@ const Reducer = (state, action) => {
         case "ADD_CARD":
             console.log("Added card");
             return {...state, cardsheld: action.payload}
+        case "REMOVE_CARD_IN_GAME":
+            console.log("Removed Card in Playing Hand");
+            return {...state, playinghand: action.payload}
         case "CHANGE_SCENE":
             console.log("Requested scene: " + action.payload);
             return {...state, gamestatus: action.payload}

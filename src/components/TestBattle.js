@@ -2,31 +2,38 @@ import {useState, useEffect, useContext} from "react";
 import { Context } from "../Store";
 import card_data from './cards/cards.json';
 import TripleCard from "./TripleCard";
+import {useDrag, useDrop} from 'react-dnd';
 import './styles/TestBattle.scss';
+import { ItemTypes } from "./Constants";
 
 export default function TestBattle() {
     const [state, dispatch] = useContext(Context);
 
-    const currentHand = state.cardsheld;
+    const [card1, setCard1] = useState();
 
-    // function to push current hand into cards
+    const currentHand = state.playinghand;
 
-    const currentHandDeck = (params) => {
-
-        
-        Object.values(currentHand).forEach(e => {
-            let cardChar = currentHand[e];
-            console.log('hand: ' + currentHand[e])
-            return (
-                <div className="cardBlock">
-                    <TripleCard card={cardChar}/>
-                </div>
-            );
-        })
-        return;
+    const removeCard = (arr, value) =>{
+        console.log("remove card: " + value)
+        return arr.filter(e=> e !== value)
     }
-    
 
+    // drop funcitonality
+    const [{isOver}, dropRef] = useDrop({
+        accept: ItemTypes.CARD,
+        drop: (item) => {
+            setCard1(item.cardId);
+            let oldHand = state.playinghand;
+            console.log('oldhand: ' + oldHand)
+            console.log(item);
+            let newHand = oldHand.filter(e => e !== item.cardId.toString());
+            console.log('newhand: ' + newHand)
+            dispatch({type: "REMOVE_CARD_IN_GAME", payload: newHand});
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver()
+        })
+    })
 
     // if array of all 9 positions has a card in position x, put <TripleCard/> in that location with a param call to the specific card
     return (
@@ -36,8 +43,8 @@ export default function TestBattle() {
             </div>
             <div className="gameBoard">
                 <div className="battleBoard">
-                    <div className="card1">
-                        <TripleCard card={"gillian"}/>
+                    <div className="card1" ref={dropRef}>
+                        {card1 ? <TripleCard card={card1}/> : null}
                     </div>
                     <div className="card2">
                         CARD2 HERE

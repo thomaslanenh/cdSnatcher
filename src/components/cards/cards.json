@@ -1,5 +1,6 @@
 {
   "gillian": {
+    "id": "gillian",
     "name": "Gillian Seed",
     "image": "/cards/gillian.jpg",
     "hp": 400,
@@ -12,6 +13,7 @@
     "right": 8
   },
   "metalgear": {
+    "id": "metalgear",
     "name": "Metal Gear",
     "image": "/cards/metalgear.jpg",
     "hp": 200,
@@ -24,6 +26,7 @@
     "right": 6
   },
   "snatcher": {
+    "id": "snatcher",
     "name": "Snatcher",
     "image": "/cards/snatcher.gif",
     "hp": 200,
@@ -36,6 +39,7 @@
     "right": 4
   },
   "mika": {
+    "id": "mika",
     "name": "Mika Slayton",
     "image": "/cards/mika.png",
     "hp": 200,
@@ -48,6 +52,7 @@
     "right": 2
   },
   "benson": {
+    "id": "benson",
     "name": "Benson Cunningham",
     "image": "/cards/benson.jpg",
     "hp": 100,
@@ -60,6 +65,7 @@
     "right": 8
   },
   "harry": {
+    "id": "harry",
     "name": "Harry Benson",
     "image": "/cards/harry.jpg",
     "hp": 100,
@@ -72,6 +78,7 @@
     "right": 4
   },
   "jeanjack": {
+    "id": "jeanjack",
     "name": "Jean Jack Gibson",
     "image": "/cards/gibson.jpg",
     "hp": 500,
@@ -84,6 +91,7 @@
     "right": 8
   },
   "napoleon": {
+    "id": "napoleon",
     "name": "Napoleon",
     "image": "/cards/napoleon.jpg",
     "hp": 100,
