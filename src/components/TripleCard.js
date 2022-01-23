@@ -9,13 +9,23 @@ import "./styles/TripleCard.scss";
 export default function TripleCard(params) {
 
  const cardId = card_data[params.card].id;
-  
-  const [{ isDragging }, drag] = useDrag(() => ({
+ const [state,dispatch] = useContext(Context);
+
+const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.CARD,
     item: {cardId},
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
+    end: (item, monitor) => {
+        const dropResult = monitor.getDropResult();
+
+        Object.values(dropResult).map(e=>console.log(e));
+
+        if (dropResult && dropResult.name === "square1"){
+            dispatch({type: 'SET_CARD_BOARD_POSITION', payload: {prop: 1, value: true} })
+        }
+    }
   }));
 
   const isEnemy = true;

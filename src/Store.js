@@ -12,6 +12,28 @@ const initialState = {
   nukes: false,
   enemyhealth: 20,
   turn: 0,
+  cardboard: {
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+      6: false,
+      7: false,
+      8: false,
+      9: false
+  },
+  cardsactive: {
+      "square1": '',
+      "square2": '',
+      "square3": '',
+      "square4": '',
+      "square5": '',
+      "square6": '',
+      "square7": '',
+      "square8": '',
+      "square9": '',
+  }
 };
 
 const Reducer = (state, action) => {
@@ -22,6 +44,19 @@ const Reducer = (state, action) => {
         case "REMOVE_CARD_IN_GAME":
             console.log("Removed Card in Playing Hand");
             return {...state, playinghand: action.payload}
+        case "SET_CARD_BOARD_POSITION":
+            console.log("Setting card position: " + action.payload);
+            return {...state, cardboard: {
+                ...state.cardboard,
+                [action.payload.prop]: action.payload.value
+            } }
+        case "SET_CARD_ACTIVE":
+            console.log("activating card");
+            console.log('PAYLOAD: ' +action.payload.prop + ' ' +  action.payload.value)
+            return {...state, cardsactive: {
+                ...state.cardsactive,
+                [action.payload.prop]: action.payload.value
+            }}
         case "CHANGE_SCENE":
             console.log("Requested scene: " + action.payload);
             return {...state, gamestatus: action.payload}
